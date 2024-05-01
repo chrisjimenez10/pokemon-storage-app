@@ -44,7 +44,7 @@ app.get("/pokemon/new", (req, res)=>{
 });
 
     //POST Route
-app.post("/pokemon/new", async (req, res)=>{
+app.post("/pokemon", async (req, res)=>{
     if(req.body.evolution === "on"){
         req.body.evolution = true;
     }else{
@@ -69,4 +69,22 @@ app.get("/pokemon/:id", async (req, res)=>{
 app.delete("/pokemon/:id", async (req, res)=>{
     await Pokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
+})
+
+    //Edit Show Page
+app.get("/pokemon/:id/edit", async (req, res)=>{
+    const pokemon = await Pokemon.findById(req.params.id);
+    res.render("edit.ejs", {
+        pokemon
+    });
+})
+
+app.put("/pokemon/:id", async (req, res)=>{
+    if(req.body.evolution === "on"){
+        req.body.evolution = true;
+    }else{
+        req.body.evolution = false;
+    }
+    await Pokemon.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect(`/pokemon/${req.params.id}`);
 })

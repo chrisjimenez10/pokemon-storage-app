@@ -8,7 +8,6 @@
 <body>
     <nav>
         <a href="/">Home Page</a>
-        <a href="/pokemon/new">Add Pokemon</a>
     </nav>
 
     <h1>Pokemon Box</h1>
@@ -17,5 +16,6 @@
             <li><a href="./pokemon/<%= pokemon._id %>"><%= pokemon.name %></a></li>
         <% }) %>
     </ul>
+    <a href="/pokemon/new"><button>Add</button>
 </body>
 </html>

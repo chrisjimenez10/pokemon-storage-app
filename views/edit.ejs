@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/pokemon/<%= pokemon._id %>">Back</a>
+    </nav>
+    <h1>Edit</h1>
+
+    <form action="/pokemon/<%= pokemon._id %>?_method=PUT" method="POST">
+        <fieldset aria-labelledby="Pokemon">
+            <legend id="Pokemon">Pokemon</legend>
+
+                <label>Name:</label>
+                <input type="text" required name="name" value="<%= pokemon.name %>"/>
+
+                <label>Strength:</label>
+                <input type="number" required  min="1" max="100" name="strength" value="<%= pokemon.strength %>"/>
+
+                <label>Type:</label>
+                <input type="text" required name="type" value="<%= pokemon.type %>"/>
+
+                <label>Ability:</label>
+                <input type="text" required name="ability" value="<%= pokemon.ability %>"/>
+
+                <label>Special Move:</label>
+                <input type="text" required name="move" value="<%= pokemon.move %>"/>
+
+                <label>Pokeball:</label>
+                <input type="text" name="pokeball" value="<%= pokemon.pokeball %>"/>
+
+                <label>Evolution:</label>
+                <input type="checkbox" name="evolution" <%= pokemon.evolution ? "checked" : "" %>/>
+
+                <button id="submit-btn">Update</button>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>

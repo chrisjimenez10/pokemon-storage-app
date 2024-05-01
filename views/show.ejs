@@ -18,10 +18,11 @@
         <li>Ability: <%= pokemon.ability %></li>
         <li>Special Move: <%= pokemon.move %></li>
         <li>Pokeball: <%= pokemon.pokeball %></li>
-        <li>Evolution: <%= pokemon.evolution === true ? "No" : "Yes" %></li>
+        <li>Evolution: <%= pokemon.evolution === true ? "Yes" : "No" %></li>
     </ul>
     <form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
         <button>Delete</button>
     </form>
+    <a href="/pokemon/<%= pokemon._id %>/edit" ><button>Edit</button></a>
 </body>
 </html>
