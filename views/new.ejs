@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pokemon</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/pokemon">Pokemon Box</a>
+    </nav>
+
+    <h1>Add New Pokemon</h1>
+    <form action="/pokemon/new" method="POST">
+        <fieldset aria-labelledby="Pokemon">
+            <legend id="Pokemon">Pokemon</legend>
+
+                <label>Name:</label>
+                <input type="text" required name="name" />
+
+                <label>Strength:</label>
+                <input type="number" required  min="1" max="100" name="strength" />
+
+                <label>Type:</label>
+                <input type="text" required name="type" />
+
+                <label>Ability:</label>
+                <input type="text" required name="ability" />
+
+                <label>Special Move:</label>
+                <input type="text" required name="move" />
+
+                <label>Pokeball:</label>
+                <input type="text" name="pokeball" />
+
+                <label>Evolution:</label>
+                <input type="checkbox" name="evolution" />
+
+                <button id="submit-btn">Submit</button>
+
+        </fieldset>
+    </form>
+</body>
+</html>

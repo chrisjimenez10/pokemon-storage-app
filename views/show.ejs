@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon: <%= pokemon.name %></title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/pokemon">Pokemon Box</a>
+    </nav>
+
+    <h1><%= pokemon.name %></h1>
+    <ul>
+        <li><%= pokemon.strength %></li>
+        <li><%= pokemon.type %></li>
+        <li><%= pokemon.ability %></li>
+        <li><%= pokemon.move %></li>
+        <li><%= pokemon.pokeball %></li>
+        <li><%= pokemon.evolution %></li>
+    </ul>
+</body>
+</html>

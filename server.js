@@ -29,3 +29,38 @@ app.listen(port, ()=>{
 app.get("/", (req, res)=>{
     res.render("home.ejs");
 });
+
+    //Index Show Page
+app.get("/pokemon", async (req, res)=>{
+    const pokemonList = await Pokemon.find({});
+    res.render("index.ejs", {
+        pokemonList
+    });
+});
+
+    //Create Show Page
+app.get("/pokemon/new", (req, res)=>{
+    res.render("new.ejs", {});
+});
+
+    //POST Route
+app.post("/pokemon/new", async (req, res)=>{
+    if(req.body.evolution === "on"){
+        req.body.evolution = true;
+    }else{
+        req.body.evolution = false;
+    }
+    if(req.body.pokeball === ""){
+        req.body.pokeball = "Normal Pokeball";
+    }
+    const pokemon = await Pokemon.create(req.body);
+    res.redirect("/pokemon");
+});
+
+    //Pokemon Details Show Page
+app.get("/pokemon/:id", async (req, res)=>{
+    const pokemon = await Pokemon.findById(req.params.id);
+    res.render("show.ejs", {
+        pokemon
+    });
+});

@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Pokemon Box</title>
 </head>
 <body>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/pokemon/new">Add Pokemon</a>
+    </nav>
+
     <h1>Pokemon Box</h1>
+    <ul>
+        <% pokemonList.forEach(pokemon => { %>
+            <li><a href="./pokemon/<%= pokemon._id %>"><%= pokemon.name %></a></li>
+        <% }) %>
+    </ul>
 </body>
 </html>
