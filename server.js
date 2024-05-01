@@ -64,3 +64,9 @@ app.get("/pokemon/:id", async (req, res)=>{
         pokemon
     });
 });
+
+    //DELETE Route
+app.delete("/pokemon/:id", async (req, res)=>{
+    await Pokemon.findByIdAndDelete(req.params.id);
+    res.redirect("/pokemon");
+})

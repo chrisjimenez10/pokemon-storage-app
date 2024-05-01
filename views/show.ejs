@@ -13,12 +13,15 @@
 
     <h1><%= pokemon.name %></h1>
     <ul>
-        <li><%= pokemon.strength %></li>
-        <li><%= pokemon.type %></li>
-        <li><%= pokemon.ability %></li>
-        <li><%= pokemon.move %></li>
-        <li><%= pokemon.pokeball %></li>
-        <li><%= pokemon.evolution %></li>
+        <li>Strength: <%= pokemon.strength %></li>
+        <li>Type: <%= pokemon.type %></li>
+        <li>Ability: <%= pokemon.ability %></li>
+        <li>Special Move: <%= pokemon.move %></li>
+        <li>Pokeball: <%= pokemon.pokeball %></li>
+        <li>Evolution: <%= pokemon.evolution === true ? "No" : "Yes" %></li>
     </ul>
+    <form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
 </body>
 </html>
