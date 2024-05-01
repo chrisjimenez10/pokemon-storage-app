@@ -1,0 +1,31 @@
+//Import
+const express = require("express");
+const app = express();
+const morgan = require("morgan");
+const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+require("dotenv").config();
+const Pokemon = require("./models/pokemon.js");
+
+//Connect Database
+mongoose.connect(process.env.MONGODB_URI);
+mongoose.connection.on("connected", ()=>{
+    console.log(`Connected to MongoDB ${mongoose.connection.name}`);
+})
+
+//Middleware
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
+app.use(express.static("public"));
+app.use(express.urlencoded({extended:false}));
+
+//Start Server
+const port = 4005;
+app.listen(port, ()=>{
+    console.log(`Listening on Port ${port}`);
+});
+
+//Routes
+app.get("/", (req, res)=>{
+    res.render("home.ejs");
+});
