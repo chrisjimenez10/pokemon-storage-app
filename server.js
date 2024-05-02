@@ -5,7 +5,9 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
-const Pokemon = require("./models/pokemon.js");
+// const Pokemon = require("./models/pokemon.js");
+// const ApiPokemon = require("./models/pokemon.js");
+const { Pokemon, ApiPokemon } = require("./models/pokemon.js")
 
 
 //Connect Database
@@ -33,11 +35,62 @@ app.get("/", (req, res)=>{
 
     //Index Show Page
 app.get("/pokemon", async (req, res)=>{
-    const pokemonList = await Pokemon.find({});
+    const pokemonList = await Pokemon.find({}).sort({name: "asc"});
     res.render("index.ejs", {
-        pokemonList
+        pokemonList,
     });
 });
+
+    //Pokedex Show Page
+app.get("/pokemon/api", async (req, res)=>{
+    const pokemonArray = await ApiPokemon.find();
+    res.render("apishow.ejs", {
+        pokemonArray
+    });
+})
+
+    //Add From API
+    app.post("/pokemon/api", async (req, res)=>{
+        const pokedexId = req.body.pokemonId;
+        const url = `https://pokeapi.co/api/v2/pokemon/${pokedexId}`;
+        let pokeName;
+        let pokeAbility;
+        let pokeType;
+        let pokeMove;
+    
+        const pokemonData = async (url) => {
+            try {
+                const response = await fetch(url);
+                // console.log(response.ok); //Checking value of the property .ok of response object
+                if(!response.ok){ //If the value of .ok property is false, then there was an error in fetching the data and we can throw an error to the catch block - operation ends there immediatley and goes to the catch block
+                    throw new Error(`HTTP Status: ${response.status}`);
+                };
+                const data = await response.json();
+                pokeName = data.name; //Name of Pokemon
+                pokeAbility = data.abilities[0].ability.name; //First ability name in array of abilities
+                pokeType = data.types[0].type.name; //First type name in array of types
+                pokeMove = data.moves[1].move.name;
+                const pokemon = await ApiPokemon.create({
+                    apiname: pokeName,
+                    apiability: pokeAbility,
+                    apitype: pokeType,
+                    apimove: pokeMove,
+                });
+                
+                console.log(pokemon);
+            } catch(error) {
+                console.log(error);
+            }
+        }
+        pokemonData(url);
+        res.redirect("/pokemon/api");
+    })
+
+
+
+
+
+
 
     //Create Show Page
 app.get("/pokemon/new", (req, res)=>{
@@ -45,7 +98,7 @@ app.get("/pokemon/new", (req, res)=>{
 });
 
     //POST Route
-app.post("/pokemon", async (req, res)=>{
+app.post("/pokemon/new", async (req, res)=>{
     if(req.body.evolution === "on"){
         req.body.evolution = true;
     }else{
@@ -89,3 +142,41 @@ app.put("/pokemon/:id", async (req, res)=>{
     await Pokemon.findByIdAndUpdate(req.params.id, req.body);
     res.redirect(`/pokemon/${req.params.id}`);
 })
+
+
+//     //Add From API
+// app.post("/pokemon/api/new", async (req, res)=>{
+//     const pokedexId = req.body.pokemonId;
+//     const url = `https://pokeapi.co/api/v2/pokemon/${pokedexId}`;
+//     let pokeName;
+//     let pokeAbility;
+//     let pokeType;
+//     let pokeMove;
+
+//     const pokemonData = async (url) => {
+//         try {
+//             const response = await fetch(url);
+//             // console.log(response.ok); //Checking value of the property .ok of response object
+//             if(!response.ok){ //If the value of .ok property is false, then there was an error in fetching the data and we can throw an error to the catch block - operation ends there immediatley and goes to the catch block
+//                 throw new Error(`HTTP Status: ${response.status}`);
+//             };
+//             const data = await response.json();
+//             pokeName = data.name; //Name of Pokemon
+//             ability = data.abilities[0].ability.name; //First ability name in array of abilities
+//             type = data.types[0].type.name; //First type name in array of types
+//             move = data.moves[1].move.name;
+//             console.log(pokeName, ability, type, move);
+//         } catch(error) {
+//             console.log(error);
+//         }
+//     }
+//     pokemonData(url);
+//      const pokemon = await ApiPokemon.create({
+//         apiname: pokeName,
+//         apiability: pokeAbility,
+//         apitype: pokeType,
+//         apimove: pokeMove,
+//     },{new: true});
+//     console.log(pokemon)
+//     res.redirect("/pokemon/api");
+// })

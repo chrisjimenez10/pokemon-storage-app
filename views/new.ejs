@@ -11,10 +11,10 @@
         <a href="/pokemon">Pokemon Box</a>
     </nav>
 
-    <h1>Add New Pokemon</h1>
-    <form action="/pokemon" method="POST">
+    <h1>New Pokemon</h1>
+    <form action="/pokemon/new" method="POST">
         <fieldset aria-labelledby="Pokemon">
-            <legend id="Pokemon">Pokemon</legend>
+            <legend id="Pokemon">Pokemon Box</legend>
 
                 <label>Name:</label>
                 <input type="text" required name="name" />
@@ -64,5 +64,15 @@
 
         </fieldset>
     </form>
+
+    <form action="/pokemon/api" method="POST">
+        <fieldset aria-labelledby="API">
+            <legend aria-labelledby="API">Pokedex</legend>
+            <label>Pokedex ID</label>
+            <input type="number" required min="1" max="800" name="pokemonId">
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
 </body>
 </html>
