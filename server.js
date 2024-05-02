@@ -108,6 +108,7 @@ app.get("/pokemon/:id", async (req, res)=>{
     });
 });
 
+    //Api Pokemon Details Show Page
 app.get("/pokemon/api/:id", async (req, res)=>{
     const apiPokemon = await ApiPokemon.findById(req.params.id);
     res.render("apishow.ejs", {
@@ -115,9 +116,15 @@ app.get("/pokemon/api/:id", async (req, res)=>{
     });
 });
 
-    //DELETE Route
+    //DELETE Pokemon Box Route
 app.delete("/pokemon/:id", async (req, res)=>{
     await Pokemon.findByIdAndDelete(req.params.id);
+    res.redirect("/pokemon");
+})
+
+    //DELETE Api Pokemon Route
+app.delete("/pokemon/api/:id", async (req, res)=>{
+    await ApiPokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
 })
 

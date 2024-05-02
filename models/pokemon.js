@@ -25,7 +25,7 @@ const PokemonSchema = new mongoose.Schema({
     },
     pokeball: {
         type: String,
-        default: "Normal Pokeball",
+        required: true,
     },
     evolution: {
         type: Boolean,

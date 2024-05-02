@@ -9,11 +9,18 @@
     <nav>
         <a href="/pokemon">Pokemon</a>
     </nav>
+
     <h1><%= apiPokemon.apiname.charAt(0).toUpperCase() + apiPokemon.apiname.slice(1) %></h1>
+
     <ul>
         <li><%= apiPokemon.apiability.charAt(0).toUpperCase() + apiPokemon.apiability.slice(1) %></li>
         <li><%= apiPokemon.apitype.charAt(0).toUpperCase() + apiPokemon.apitype.slice(1) %></li>
         <li><%= apiPokemon.apimove.charAt(0).toUpperCase() + apiPokemon.apimove.slice(1) %></li>
     </ul>
+
+    <form action="/pokemon/api/<%= apiPokemon._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
 </body>
 </html>
