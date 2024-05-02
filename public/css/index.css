@@ -1,4 +1,11 @@
 * {
     box-sizing: border-box;
 }
+ body {
+    background-color: lightpink;
+ }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

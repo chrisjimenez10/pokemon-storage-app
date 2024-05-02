@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Box</title>
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="../css/index.css" />
 </head>
 <body>
     <nav>
         <a href="/">Home Page</a>
-        <a href="/pokemon/api">Pokedex</a>
     </nav>
 
-    <h1>Pokemon Box</h1>
-    <div id="flex-container">
-        <ul>
-            <% pokemonList.forEach(pokemon => { %>
-                <li><a href="./pokemon/<%= pokemon._id %>"><%= pokemon.name %></a></li>
-            <% }) %>
-        </ul>
+    <div class="grid-container">
+        <div id="grid-cell-one">
+            <h1>Pokemon Box</h1>
+            <ul>
+                <% pokemonList.forEach(pokemon => { %>
+                    <li><a href="./pokemon/<%= pokemon._id %>"><%= pokemon.name %></a></li>
+                <% }) %>
+            </ul>
+            <a href="/pokemon/new"><button>Create</button></a>
+        </div>
+
+        <div id="grid-cell-two">
+            <h1>Pokedex</h1>
+            <ul>
+                <% pokemonArray.forEach(pokemon => { %>
+                    <li><a href="./pokemon/api/<%= pokemon._id %>"><%= pokemon.apiname.charAt(0).toUpperCase() + pokemon.apiname.slice(1) %></a></li>
+                <% }) %>
+            </ul>
+            <a href="/pokemon/new/api"><button>Add</button></a>
+        </div>
     </div>
-
-    <div id="flex-container-two">
-
-    </div>
-
-    <a href="/pokemon/new"><button>Create</button></a>
     <!-- <a href="/pokemon/new/api"><button>Add</button></a> -->
     <!-- <div id="image-container">
         <img src="images/pokemon-city.jpg" width="750px" height="650px"/>

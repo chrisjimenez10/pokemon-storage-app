@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pokemon</title>
+</head>
+<body>
+    <nav>
+        <a href="/pokemon">Pokemon</a>
+    </nav>
+    
+    <h1> New Pokemon</h1>
+    <form action="/pokemon/api" method="POST">   
+        <fieldset aria-labelledby="API">
+            <legend aria-labelledby="API">Pokedex</legend>
+                <label>Pokedex ID</label>
+                <input type="number" required min="1" max="800" name="pokemonId">
+                <button id="submit-btn">Submit</button>
+        </fieldset>    
+    </form>
+</body>
+</html>
