@@ -52,7 +52,7 @@ app.get("/pokemon/new", (req, res)=>{
     //Add Pokedex Show Page
 app.get("/pokemon/new/api", (req, res)=>{
     res.render("new-api.ejs");
-})
+});
 
     //Add From API
 app.post("/pokemon/api", async (req, res)=>{
@@ -87,7 +87,7 @@ app.post("/pokemon/api", async (req, res)=>{
         }
     }
     pokemonData(url);
-})
+});
 
     //POST Route
 app.post("/pokemon/new", async (req, res)=>{
@@ -120,13 +120,13 @@ app.get("/pokemon/api/:id", async (req, res)=>{
 app.delete("/pokemon/:id", async (req, res)=>{
     await Pokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
-})
+});
 
     //DELETE Api Pokemon Route
 app.delete("/pokemon/api/:id", async (req, res)=>{
     await ApiPokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
-})
+});
 
     //Edit Show Page
 app.get("/pokemon/:id/edit", async (req, res)=>{
@@ -134,7 +134,8 @@ app.get("/pokemon/:id/edit", async (req, res)=>{
     res.render("edit.ejs", {
         pokemon
     });
-})
+});
+
     //PUT Route
 app.put("/pokemon/:id", async (req, res)=>{
     if(req.body.evolution === "on"){
@@ -144,6 +145,6 @@ app.put("/pokemon/:id", async (req, res)=>{
     }
     await Pokemon.findByIdAndUpdate(req.params.id, req.body);
     res.redirect(`/pokemon/${req.params.id}`);
-})
+});
 
 
