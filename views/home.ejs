@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script defer src="app.js"></script>
 </head>
 <body>
-    <nav>
-        <a href="/pokemon">Pokemon Box</a>
-    </nav>
-    
-    <h1>Welcome to the Pokemon App</h1>
-    <div class="image-container">
-        <img src="images/pokemon-city.jpg"/>
+
+    <div id="grid-container">
+        <main>
+            <h1>Welcome to the Pokemon App</h1>
+        </main>
+        <!-- Browsers do not like it when we put autoplay sound (including videos), so we need to add the "muted" attribute -->
+        <!-- <video id="video" autoplay muted loop width="600px" height="600px" >
+            <source src="videos/pokemon-stadium-video.mp4" type="video/mp4">
+        </video> -->
+        <a href="/pokemon"><button>Pokemon Box</button></a>
     </div>
 </body>
 </html>
