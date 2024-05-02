@@ -8,13 +8,12 @@ body {
     background-image: url("https://cdn.leonardo.ai/users/18ef5c8a-497b-4042-8160-eb179278acf6/generations/07a5c1b4-7462-43fe-8799-da7eecd080a9/Default_10_pokeballs_nature_beach_background_1.jpg");
     background-size: cover;
     font-family: 'Pokemon Solid', sans-serif;
+    height: 95vh;
 }
 
 #grid-container {
     display: grid;
-    grid-template-areas:
-    "heading"
-    "image";
+    grid-template-columns: 1fr;
     align-items: center;
     justify-items: center;
 }
@@ -26,7 +25,6 @@ main {
     border-radius: 45px;
     padding-left: 30px;
     padding-right: 30px;
-    grid-area: heading;
 }
 
 h1 {
@@ -39,7 +37,7 @@ button {
     font-size: 1.2rem;
     border-radius: 30px;
     margin-top: 20px;
-    background-color: red;
+    background-color: hsla(360, 100%, 45%, 0.45);
     color: white;
     box-shadow: 2px 2px 2px black;
     text-shadow: 2px 2px 2px black;
@@ -51,10 +49,12 @@ button:hover {
     transform: scale(1.05);
 }
 
-video {
+/* video {
     border-radius: 600px;
-    /* border: 5px solid white; */
+    border: 5px solid white;
     grid-area: image;
 }
+*/
+
 
 
