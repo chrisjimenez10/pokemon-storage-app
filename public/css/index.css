@@ -1,11 +1,48 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 * {
     box-sizing: border-box;
 }
  body {
     background-color: lightpink;
+    background-image: url("../images/pokeball-background.jpg");
+    background-size: cover;
+    font-family: 'Pokemon Solid', sans-serif;
+ }
+
+ h1 {
+    color: white;
+    text-shadow: 3px 3px 3px black;
  }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+
+ul {
+    list-style-image: url("../images/pokeball-small.png");
+    /* We can use images to customize our bullet points for list items with this declaration - ENSURE that image size is appropriate (15px - 25px); */
+}
+
+li {
+    margin-top: -18px;
+}
+
+#grid-cell-one {
+    background-color: hsla(45, 100%, 72%, 0.20);
+    box-shadow: 0 0 21px 10px hsla(45, 100%, 72%, 0.35);
+    border-radius: 45px;
+}
+
+#grid-cell-two {
+    background-color: hsla(45, 100%, 72%, 0.20);
+    box-shadow: 0 0 21px 10px hsla(45, 100%, 72%, 0.35);
+    border-radius: 45px;
 }

@@ -36,8 +36,8 @@ app.get("/", (req, res)=>{
 
     //Index Show Page
 app.get("/pokemon", async (req, res)=>{
-    const pokemonList = await Pokemon.find({}).sort({name: "asc"});
-    const pokemonArray = await ApiPokemon.find();
+    const pokemonList = await Pokemon.find({}).sort({strength: "desc"});
+    const pokemonArray = await ApiPokemon.find({}).sort({apiname: "asc"});
     res.render("index.ejs", {
         pokemonList,
         pokemonArray,
