@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
  body {
-    background-color: lightpink;
     background-image: url("../images/pokeball-background.jpg");
     background-size: cover;
     font-family: 'Pokemon Solid', sans-serif;
  }
+
+nav {
+    margin-top: -15px;
+}
 
  h1 {
     color: white;
@@ -26,6 +29,14 @@ a {
     text-shadow: 3px 3px 3px black;
 }
 
+a:hover {
+    color: hsla(45, 100%, 72%, 0.9);
+}
+
+li:hover {
+    transform: scale(1.05);
+}
+
 ul {
     list-style-image: url("../images/pokeball-small.png");
     /* We can use images to customize our bullet points for list items with this declaration - ENSURE that image size is appropriate (15px - 25px); */
@@ -35,14 +46,39 @@ li {
     margin-top: -18px;
 }
 
+button {
+    margin-left: 60px;
+    font-size: 1.2rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: hsla(360, 100%, 45%, 0.45);
+    color: white;
+    box-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    font-family: 'Pokemon Solid', sans-serif;
+}
+
+button:hover {
+    transform: scale(1.06);
+    background-color: hsla(360, 100%, 45%, 0.25);
+}
+
 #grid-cell-one {
     background-color: hsla(45, 100%, 72%, 0.20);
-    box-shadow: 0 0 21px 10px hsla(45, 100%, 72%, 0.35);
+    box-shadow: 0 0 21px 10px hsla(40, 7%, 92%, 0.45);
     border-radius: 45px;
+    justify-self: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #grid-cell-two {
     background-color: hsla(45, 100%, 72%, 0.20);
-    box-shadow: 0 0 21px 10px hsla(45, 100%, 72%, 0.35);
+    box-shadow: 0 0 21px 10px hsla(40, 7%, 92%, 0.45);
     border-radius: 45px;
+    justify-self: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
