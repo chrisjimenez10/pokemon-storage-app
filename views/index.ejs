@@ -6,19 +6,23 @@
     <title>Pokemon Box</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Home Page</a>
-    </nav>
 
-    <h1>Pokemon Box</h1>
-    <ul>
-        <% pokemonList.forEach(pokemon => { %>
-            <li><a href="./pokemon/<%= pokemon._id %>"><%= pokemon.name %></a></li>
-        <% }) %>
-    </ul>
-    <a href="/pokemon/new"><button>Add</button></a>
-        <div id="image-container">
-            <img src="images/pokemon-city.jpg" width="750px" height="650px"/>
+        <nav>
+            <a href="/">Home Page</a>
+        </nav>
+
+        <h1>Pokemon Box</h1>
+        <div id="flex-container">
+            <ul>
+                <% pokemonList.forEach(pokemon => { %>
+                    <li><a href="./pokemon/<%= pokemon._id %>"><%= pokemon.name %></a></li>
+                <% }) %>
+            </ul>
         </div>
+        <a href="/pokemon/new"><button>Add</button></a>
+    
+        <!-- <div id="image-container">
+            <img src="images/pokemon-city.jpg" width="750px" height="650px"/>
+        </div> -->
 </body>
 </html>
