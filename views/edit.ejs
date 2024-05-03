@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
+    <title>Edit: <%= pokemon.name %></title>
+    <link rel="stylesheet" href="/css/new.css" />
 </head>
 <body>
     <nav>
         <a href="/">Home Page</a>
         <a href="/pokemon/<%= pokemon._id %>">Back</a>
     </nav>
-    <h1>Edit</h1>
 
+    <main>
+    <h1>Edit</h1>
     <form action="/pokemon/<%= pokemon._id %>?_method=PUT" method="POST">
         <fieldset aria-labelledby="Pokemon">
             <legend id="Pokemon">Pokemon</legend>
@@ -67,6 +69,6 @@
 
         </fieldset>
     </form>
-
+    </main>
 </body>
 </html>

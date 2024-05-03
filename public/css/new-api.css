@@ -33,7 +33,7 @@ fieldset {
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 250px; 
+    height: 325px; 
     border-color: hsla(45, 100%, 72%, 0.9);
     color: white;
     text-shadow: 3px 3px 3px black;

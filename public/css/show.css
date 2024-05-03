@@ -27,7 +27,8 @@ h1 {
 main {
     margin-top: -35px;
     margin-left: 45px;
-    color: white;
+    text-shadow: 3px 3px 1px black;
+    color: whitesmoke;
 }
 
 img {
