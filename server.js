@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
-// const Pokemon = require("./models/pokemon.js");
+// const Pokemon = require("./models/pokemon.js");  //We need to import as a single module if they come form the same file
 // const ApiPokemon = require("./models/pokemon.js");
 const { Pokemon, ApiPokemon } = require("./models/pokemon.js")
 
