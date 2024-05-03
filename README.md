@@ -10,4 +10,4 @@
 ## Credits
 ### * [Pokemon API Documentation](https://pokeapi.co/docs/v2)
 ### * [How to Write a Good README File](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
-### * ChatGPT: Learned about modules, file storage, video element, mulitple forms in a single HTML document, custom list-type-image for a <ul> list, use of multiple schemas
+### * ChatGPT: Learned about modules, file storage, video element, mulitple forms in a single HTML document, custom list-type-image for an unordered list, use of multiple schemas
