@@ -47,6 +47,7 @@ button {
 
 button:hover {
     transform: scale(1.05);
+    background-color: rgb(238, 12, 12);
 }
 
 /* video {

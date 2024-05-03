@@ -29,6 +29,10 @@ a {
     text-shadow: 3px 3px 3px black;
 }
 
+#link {
+    margin-left: 25px;
+}
+
 a:hover {
     color: hsla(45, 100%, 72%, 0.9);
 }
@@ -62,7 +66,7 @@ button {
 
 button:hover {
     transform: scale(1.05);
-    background-color: hsla(0, 43%, 57%, 0.35);
+    background-color: rgb(238, 12, 12);
 }
 
 #grid-cell-one {

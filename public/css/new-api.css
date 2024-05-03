@@ -11,7 +11,7 @@ body {
     font-family: 'Pokemon Solid', sans-serif;
  }
 
-a {
+ a {
     text-decoration: none;
     color: white;
     margin: 15px;
@@ -32,11 +32,16 @@ fieldset {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    width: 10px;
+    width: 200px;
+    height: 250px; 
     border-color: hsla(45, 100%, 72%, 0.9);
     color: white;
     text-shadow: 3px 3px 3px black;
     font-size: 1.2rem;
+}
+
+main {
+    margin-left: 30px;
 }
 
 button {
@@ -58,9 +63,3 @@ button:hover {
     transform: scale(1.05);
     background-color: rgb(238, 12, 12);
 }
-
-main {
-    margin-left: 30px;
-}
-
-

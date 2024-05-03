@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Pokemon</title>
-    <link rel="stylesheet" href="/css/new.css" />
-
+    <link rel="stylesheet" href="/css/new-api.css" />
 </head>
 <body>
     <nav>
+        <a href="/">Home Page</a>
         <a href="/pokemon">Pokemon</a>
     </nav>
-    
+
+    <main>
     <h1> New Pokemon</h1>
     <form action="/pokemon/api" method="POST">   
         <fieldset aria-labelledby="API">
             <legend aria-labelledby="API">Pokedex</legend>
                 <label>Pokedex ID</label>
-                <input type="number" required min="1" max="800" name="pokemonId">
+                <input type="number" required min="1" max="800" name="pokemonId" placeholder="1 - 800">
                 <button id="submit-btn">Submit</button>
         </fieldset>    
     </form>
+    </main>
+
 </body>
 </html>

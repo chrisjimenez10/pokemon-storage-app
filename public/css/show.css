@@ -8,3 +8,13 @@ body {
     background-color: beige;
     font-family: 'Pokemon Solid', sans-serif;
  }
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+}
+
+ a:hover {
+    color: hsla(45, 100%, 72%, 0.9);
+}
