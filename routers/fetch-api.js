@@ -14,6 +14,7 @@ router.get("/pokemon/new/api", (req, res)=>{
     res.render("new-api.ejs");
 });
 
+
     //Add From API
 router.post("/pokemon/api", async (req, res)=>{
     const pokedexId = req.body.pokemonId;

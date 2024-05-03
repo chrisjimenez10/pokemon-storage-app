@@ -10,6 +10,7 @@
     <nav>
         <a href="/pokemon">Pokemon</a>
     </nav>
+
     <main>
         <h1><%= apiPokemon.apiname.charAt(0).toUpperCase() + apiPokemon.apiname.slice(1) %></h1>
 
@@ -21,6 +22,7 @@
             <li>Special Move: <%= apiPokemon.apimove.charAt(0).toUpperCase() + apiPokemon.apimove.slice(1) %></li>
         </ul>
     </main>
+    
     <form action="/pokemon/api/<%= apiPokemon._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
     </form>
