@@ -10,4 +10,5 @@
 ## Credits
 ### * [Pokemon API Documentation](https://pokeapi.co/docs/v2)
 ### * [How to Write a Good README File](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
+### * [Pokemon List for API](https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number#List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number)
 ### * ChatGPT: Learned about modules, file storage, video element, mulitple forms in a single HTML document, custom list-type-image for an unordered list, use of multiple schemas
