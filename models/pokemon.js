@@ -46,7 +46,10 @@ const ApiPokemonSchema = new mongoose.Schema({
     apimove: {
         type: String,
     },
-})
+    apiimage: {
+        type: String,
+    }
+});
 
 //Models
 const Pokemon = mongoose.model("Pokemon", PokemonSchema);

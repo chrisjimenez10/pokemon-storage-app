@@ -10,15 +10,17 @@
     <nav>
         <a href="/pokemon">Pokemon</a>
     </nav>
+    <main>
+        <h1><%= apiPokemon.apiname.charAt(0).toUpperCase() + apiPokemon.apiname.slice(1) %></h1>
 
-    <h1><%= apiPokemon.apiname.charAt(0).toUpperCase() + apiPokemon.apiname.slice(1) %></h1>
+        <img src="<%= apiPokemon.apiimage %>" />
 
-    <ul>
-        <li>Ability: <%= apiPokemon.apiability.charAt(0).toUpperCase() + apiPokemon.apiability.slice(1) %></li>
-        <li>Type: <%= apiPokemon.apitype.charAt(0).toUpperCase() + apiPokemon.apitype.slice(1) %></li>
-        <li>Special Move: <%= apiPokemon.apimove.charAt(0).toUpperCase() + apiPokemon.apimove.slice(1) %></li>
-    </ul>
-
+        <ul>
+            <li>Ability: <%= apiPokemon.apiability.charAt(0).toUpperCase() + apiPokemon.apiability.slice(1) %></li>
+            <li>Type: <%= apiPokemon.apitype.charAt(0).toUpperCase() + apiPokemon.apitype.slice(1) %></li>
+            <li>Special Move: <%= apiPokemon.apimove.charAt(0).toUpperCase() + apiPokemon.apimove.slice(1) %></li>
+        </ul>
+    </main>
     <form action="/pokemon/api/<%= apiPokemon._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
     </form>

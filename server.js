@@ -62,6 +62,7 @@ app.post("/pokemon/api", async (req, res)=>{
     let pokeAbility;
     let pokeType;
     let pokeMove;
+    let pokeImage;
 
     const pokemonData = async (url) => {
         try {
@@ -74,11 +75,13 @@ app.post("/pokemon/api", async (req, res)=>{
             pokeAbility = data.abilities[0].ability.name; //First ability name in array of abilities
             pokeType = data.types[0].type.name; //First type name in array of types
             pokeMove = data.moves[1].move.name; //Second move name in array of moves
+            pokeImage = data.sprites.other.dream_world.front_default; //Image (only pokemon 1-649 have this type of image)
             const pokemon = await ApiPokemon.create({
                 apiname: pokeName,
                 apiability: pokeAbility,
                 apitype: pokeType,
                 apimove: pokeMove,
+                apiimage: pokeImage
             });
             res.redirect("/pokemon"); //I initially had res.redirect() outside of the async function, but I had to refresh the browser to see the udpated database - Learned that it had to go inside the async function where the document is created and stored in the database, so that the redirection occurs AFTER the document is created and stored (Outside, it redirected before the document was actually created and stored - hence the need to refresh browser)
             console.log(pokemon);
