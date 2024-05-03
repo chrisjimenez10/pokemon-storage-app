@@ -52,7 +52,7 @@ router.post("/pokemon/api", async (req, res)=>{
     pokemonData(url);
 });
 
-//Api Pokemon Details Show Page
+    //Api Pokemon Details Show Page
 router.get("/pokemon/api/:id", async (req, res)=>{
     const apiPokemon = await ApiPokemon.findById(req.params.id);
     res.render("apishow.ejs", {
@@ -60,7 +60,7 @@ router.get("/pokemon/api/:id", async (req, res)=>{
     });
 });
 
-//DELETE Api Pokemon Route
+    //DELETE Api Pokemon Route
 router.delete("/pokemon/api/:id", async (req, res)=>{
     await ApiPokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
