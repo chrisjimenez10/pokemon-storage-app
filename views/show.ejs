@@ -12,15 +12,20 @@
         <a href="/pokemon">Pokemon</a>
     </nav>
 
-    <h1><%= pokemon.name %></h1>
-    <ul>
-        <li>Strength: <%= pokemon.strength %></li>
-        <li>Type: <%= pokemon.type %></li>
-        <li>Ability: <%= pokemon.ability %></li>
-        <li>Special Move: <%= pokemon.move %></li>
-        <li>Pokeball: <%= pokemon.pokeball %></li>
-        <li>Evolution: <%= pokemon.evolution === true ? "Yes" : "No" %></li>
-    </ul>
+    <main>
+        <h1><%= pokemon.name %></h1>
+
+        <img src="<%= pokemon.image %>" width="200px"/>
+
+        <ul>
+            <li>Strength: <%= pokemon.strength %></li>
+            <li>Type: <%= pokemon.type %></li>
+            <li>Ability: <%= pokemon.ability %></li>
+            <li>Special Move: <%= pokemon.move %></li>
+            <li>Pokeball: <%= pokemon.pokeball %></li>
+            <li>Evolution: <%= pokemon.evolution === true ? "Yes" : "No" %></li>
+        </ul>
+    </main>
     <form action="/pokemon/<%= pokemon._id %>?_method=DELETE" method="POST">
         <button>Delete</button>
     </form>

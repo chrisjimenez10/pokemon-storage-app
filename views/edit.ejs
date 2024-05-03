@@ -57,6 +57,9 @@
                     <option value="Luxury Ball">Luxury</option>
                 </select>
 
+                <label>Image:</label>
+                <input type="text" required name="image" value="<%= pokemon.image %>"/>
+
                 <label>Evolution:</label>
                 <input type="checkbox" name="evolution" <%= pokemon.evolution ? "checked" : "" %>/>
 

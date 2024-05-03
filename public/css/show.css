@@ -20,5 +20,9 @@ a {
 }
 
 main {
-    margin-left: 25px;
+    margin-left: 45px;
+}
+
+img {
+    border-radius: 15px;
 }
