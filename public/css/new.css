@@ -65,4 +65,10 @@ main {
     margin-left: 30px;
 }
 
+@media(max-width: 460px){
+    fieldset {
+        margin-top: 30px;
+    }
+}
+
 
