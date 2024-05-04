@@ -7,7 +7,9 @@
 body {
     background-image: url("../images/pokeball-hd4k.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Pokemon Solid', sans-serif;
+    background-color: black;
  }
 
 a {
@@ -62,4 +64,25 @@ button:hover {
 #delete-btn {
     margin-right: -50px;
     margin-top: 13px;
+}
+
+@media(max-width: 1146px){
+    body {
+        height: 100vh;
+    }
+    img {
+        max-height: 250px;
+    }
+}
+
+@media(max-width: 422px){
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media(max-width: 288px){
+    h1 {
+        font-size: 1.5rem;
+    }
 }

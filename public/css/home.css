@@ -57,5 +57,24 @@ button:hover {
 }
 */
 
+@media(max-width: 1010px){
+    body {
+        height: 100vh;
+    }
+}
+
+@media(max-width: 987px){
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 531px){
+    h1 {
+        font-size: 1.1rem;
+    }
+
+}
+
 
 
