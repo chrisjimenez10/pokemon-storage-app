@@ -89,6 +89,9 @@ button:hover {
 
 @media(max-width: 500px){
     li {
-        margin-top: 25px;
+        margin-top: 15px;
+    }
+    #grid-cell-one, #grid-cell-two {
+        margin-top: 20px;
     }
 }
