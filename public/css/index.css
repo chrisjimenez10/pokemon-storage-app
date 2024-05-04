@@ -86,3 +86,9 @@ button:hover {
     padding-left: 50px;
     padding-right: 50px;
 }
+
+@media(max-width: 500px){
+    #grid-cell-one, #grid-cell-two {
+        margin-top: 35px;
+    }
+}
