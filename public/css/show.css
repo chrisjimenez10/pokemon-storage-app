@@ -79,6 +79,9 @@ button:hover {
     h1 {
         font-size: 2.2rem;
     }
+    main {
+        margin-top: 30px;
+    }
 }
 
 @media(max-width: 288px){
