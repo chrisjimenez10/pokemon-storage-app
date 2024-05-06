@@ -47,10 +47,10 @@ app.listen(port, ()=>{
 //Routes
     //Home Show Page
 app.get("/", (req, res)=>{
-    res.render("home.ejs");
-    // res.render("home.ejs", {
-    //     user: req.session.user,
-    // });
+    // res.render("home.ejs");
+    res.render("home.ejs", {
+        user: req.session.user,
+    });
 });
 
     //Authenication
