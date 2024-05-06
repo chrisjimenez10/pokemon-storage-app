@@ -29,8 +29,22 @@ main {
 
 h1 {
     font-size: 4rem;
-    color: white;
+    color: whitesmoke;
     text-shadow: 3px 3px 3px black;
+}
+
+h5 {
+    color: white;
+    text-shadow: 3px 3px 2px black;
+}
+
+a {
+    text-decoration: none;
+    color: yellow;
+}
+
+#sign-out {
+    margin-left: 25px;
 }
 
 button {
@@ -73,7 +87,6 @@ button:hover {
     h1 {
         font-size: 1.1rem;
     }
-
 }
 
 

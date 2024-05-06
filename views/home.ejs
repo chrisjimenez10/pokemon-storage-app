@@ -8,23 +8,23 @@
     <script defer src="app.js"></script>
 </head>
 <body>
-        <% if(user){ %>
-            <h3>Hello, <%= user.username %></h3>
-            <a href="/auth/sign-out">Sign-Out</a>
-       <% }else{ %>
-            <a href="/auth/sign-up">Sign-Up</a>
-            <a href="/auth/sign-in">Sign-In</a>
-      <% } %>
-
     <div id="grid-container">
-        <main>
-            <h1>Welcome to the Pokemon App</h1>
-        </main>
+        <% if(user){ %>
+            <h5>Hello, <%= user.username %> <a id="sign-out" href="/auth/sign-out">Sign-Out</a></h5>
+            <main>
+                <h1>Welcome to the Pokemon App</h1>
+            </main>
+            <a href="/pokemon"><button>Pokemon</button></a>
+       <% }else{ %>
+            <h5>Hello, Guest: <a href="/auth/sign-up">Sign-Up</a> or <a href="/auth/sign-in">Sign-In</a></h5>
+            <main>
+                <h1>Welcome to the Pokemon App</h1>
+            </main>
+      <% } %>
         <!-- Browsers do not like it when we put autoplay sound (including videos), so we need to add the "muted" attribute -->
         <!-- <video id="video" autoplay muted loop width="600px" height="600px" >
             <source src="videos/pokemon-stadium-video.mp4" type="video/mp4">
         </video> -->
-        <a href="/pokemon"><button>Pokemon</button></a>
     </div>
 </body>
 </html>
