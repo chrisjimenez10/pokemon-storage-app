@@ -1,0 +1,80 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/forest-sunset.jpg");
+    background-size: cover;
+    color: white;
+    font-family: 'Pokemon Solid', sans-serif;
+    text-shadow: 3px 3px 3px black;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 225px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: hsla(45, 100%, 72%, 0.9);
+}
+
+button {
+    width: 100px;
+    font-size: 1rem;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: hsla(360, 100%, 45%, 0.45);
+    color: white;
+    box-shadow: 2px 2px 2px white;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    font-family: 'Pokemon Solid', sans-serif;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: rgb(238, 12, 12);
+}
+
+@media(max-width: 1143px){
+    body {
+        height: 100vh;
+    }
+}
+
+@media(max-width: 380px){
+    h1 {
+        font-size: 1.2rem;
+    }
+    label {
+        font-size: 1rem;
+    }
+    button {
+        width: 80px;
+        font-size: .9rem;
+    }
+}
