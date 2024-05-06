@@ -9,6 +9,7 @@ const router = require("./routers/fetch-api"); //Importing router (ENSURE that t
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const authController = require("./controllers/auth");
+const passUserToView = require("./middleware/pass-user-to-views");
 
 // const Pokemon = require("./models/pokemon.js");  //We need to import as a single module if they come form the same file
 // const ApiPokemon = require("./models/pokemon.js");
@@ -34,6 +35,7 @@ app.use(session({
         mongoUrl: process.env.MONGODB_URI,
     })
 }));
+app.use(passUserToView); //Pass user variable via locals object to all views templates
 app.use("/", router); //Router (Start to serach for routes in the router file from the landing page "/" of the app - It did not work when I tried to indicate "/pokmeon" or "/pokemon/api")
 
 //Start Server
@@ -45,9 +47,10 @@ app.listen(port, ()=>{
 //Routes
     //Home Show Page
 app.get("/", (req, res)=>{
-    res.render("home.ejs", {
-        user: req.session.user,
-    });
+    res.render("home.ejs");
+    // res.render("home.ejs", {
+    //     user: req.session.user,
+    // });
 });
 
     //Authenication
