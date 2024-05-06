@@ -57,7 +57,7 @@ app.use("/auth", authController);
     //Index Show Page
 app.get("/pokemon", async (req, res)=>{
     const pokemonList = await Pokemon.find({}).sort({strength: "desc"});
-    const pokemonArray = await ApiPokemon.find({}); //.sort({apiname: "asc"});
+    const pokemonArray = await ApiPokemon.find({});
     res.render("index.ejs", {
         pokemonList,
         pokemonArray,

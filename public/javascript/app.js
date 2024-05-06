@@ -10,6 +10,7 @@
 // }
 // decreaseSpeed();
 
+
 //Real-Time Input Validation
 const usernameElement = document.querySelector("#username");
 const passwordElement = document.querySelector("#password");
