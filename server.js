@@ -6,6 +6,9 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
 const router = require("./routers/fetch-api"); //Importing router (ENSURE that the path is correct to the file CONTAINING the routers: From the perspective of the root application)
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const authController = require("./controllers/auth");
 
 // const Pokemon = require("./models/pokemon.js");  //We need to import as a single module if they come form the same file
 // const ApiPokemon = require("./models/pokemon.js");
@@ -23,6 +26,14 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:false})); //When I included both forms in the same POST route handler, the request would not resolve and document was not created because extended was set to false - learned that when set to true it's better for parsing nested objects, part of core Node.js library, and slightly faster
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI,
+    })
+}));
 app.use("/", router); //Router (Start to serach for routes in the router file from the landing page "/" of the app - It did not work when I tried to indicate "/pokmeon" or "/pokemon/api")
 
 //Start Server
@@ -34,8 +45,14 @@ app.listen(port, ()=>{
 //Routes
     //Home Show Page
 app.get("/", (req, res)=>{
-    res.render("home.ejs");
+    res.render("home.ejs", {
+        user: req.session.user,
+    });
 });
+
+    //Authenication
+app.use("/auth", authController);
+
 
     //Index Show Page
 app.get("/pokemon", async (req, res)=>{
