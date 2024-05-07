@@ -35,7 +35,7 @@ app.use(session({
         mongoUrl: process.env.MONGODB_URI,
     })
 }));
-app.use(passUserToView); //Pass user variable via locals object to all views templates
+// app.use(passUserToView); //Pass user variable via locals object to all views templates
 app.use("/", router); //Router (Start to serach for routes in the router file from the landing page "/" of the app - It did not work when I tried to indicate "/pokmeon" or "/pokemon/api")
 
 //Start Server
@@ -47,10 +47,10 @@ app.listen(port, ()=>{
 //Routes
     //Home Show Page
 app.get("/", (req, res)=>{
-    res.render("home.ejs");
-    // res.render("home.ejs", {
-    //     user: req.session.user,
-    // });
+    // res.render("home.ejs");
+    res.render("home.ejs", {
+        user: req.session.user,
+    });
 });
 
     //Authenication
