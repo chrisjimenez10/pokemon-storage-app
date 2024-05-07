@@ -44,7 +44,6 @@ app.listen(port, ()=>{
     console.log(`Listening on Port ${port}`);
 });
 
-app.use("/auth", authController);
 //Routes
     //Home Show Page
 app.get("/", (req, res)=>{
@@ -55,8 +54,7 @@ app.get("/", (req, res)=>{
 });
 
     //Authenication
-// app.use("/auth", authController);
-
+app.use("/auth", authController);
 
     //Index Show Page
 app.get("/pokemon", async (req, res)=>{
