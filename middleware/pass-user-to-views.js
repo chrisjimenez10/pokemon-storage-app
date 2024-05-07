@@ -1,8 +1,7 @@
-const passUserToView = async (req, res, next)=>{
+const passUserToView = (req, res, next)=>{
+    console.log(req.session.user);
     res.locals.user = req.session.user ? req.session.user : null;
-    req.session.save(()=>{
-        
-    }); //debug attempt for AWS
+    console.log(res.locals.user)//debug attempt for AWS
     next();
 };
 

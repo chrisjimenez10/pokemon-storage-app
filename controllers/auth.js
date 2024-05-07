@@ -4,6 +4,8 @@ const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
+router.use(express.static("public")); //debug AWS
+
 //Routes
     //Sign-Up Show Page
 router.get("/sign-up", (req, res)=>{
