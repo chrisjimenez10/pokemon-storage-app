@@ -12,3 +12,4 @@
 ### * [How to Write a Good README File](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
 ### * [Pokemon List for API](https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number#List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number)
 ### * ChatGPT: Learned about modules, file storage, video element, mulitple forms in a single HTML document, custom list-type-image for an unordered list, use of multiple schemas, class notes on authentication feature with protection of routes, use of res.locals object, and real-time validation input using regex
+### * [Live Deployment](3.144.248.39:4005)
