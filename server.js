@@ -10,6 +10,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const authController = require("./controllers/auth");
 const passUserToView = require("./middleware/pass-user-to-views");
+const isSignedIn = require("./middleware/is-signed-in.js");
 
 // const Pokemon = require("./models/pokemon.js");  //We need to import as a single module if they come form the same file
 // const ApiPokemon = require("./models/pokemon.js");
@@ -57,7 +58,7 @@ app.get("/", (req, res)=>{
 app.use("/auth", authController);
 
     //Index Show Page
-app.get("/pokemon", async (req, res)=>{
+app.get("/pokemon", isSignedIn, async (req, res)=>{
     const pokemonList = await Pokemon.find({}).sort({strength: "desc"});
     const pokemonArray = await ApiPokemon.find({});
     res.render("index.ejs", {
@@ -67,7 +68,7 @@ app.get("/pokemon", async (req, res)=>{
 });
 
     //Create Pokemon Box Show Page
-app.get("/pokemon/new", (req, res)=>{
+app.get("/pokemon/new", isSignedIn, (req, res)=>{
     res.render("new.ejs", {});
 });
 

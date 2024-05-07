@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
+const isSignedIn = require("../middleware/is-signed-in.js");
 const { Pokemon, ApiPokemon } = require("../models/pokemon.js"); //NOTE: Important to import ALL the neccessary modules and packages that we need for any operation INSIDE the route handlers and functions in this file
 
 //Set up variable to hold built-in Router() method for express
@@ -10,10 +11,9 @@ const router = express.Router();
 
 //API Pokemon Routes
     //Add Pokedex Show page
-router.get("/pokemon/new/api", (req, res)=>{
+router.get("/pokemon/new/api", isSignedIn, (req, res)=>{
     res.render("new-api.ejs");
 });
-
 
     //Add From API
 router.post("/pokemon/api", async (req, res)=>{
