@@ -58,7 +58,7 @@ app.get("/", (req, res)=>{
 app.use("/auth", authController);
 
     //Index Show Page
-app.get("/pokemon", isSignedIn, async (req, res)=>{
+app.get("/pokemon", async (req, res)=>{
     const pokemonList = await Pokemon.find({}).sort({strength: "desc"});
     const pokemonArray = await ApiPokemon.find({});
     res.render("index.ejs", {
@@ -73,7 +73,7 @@ app.get("/pokemon/new", isSignedIn, (req, res)=>{
 });
 
     //POST Route
-app.post("/pokemon/new", async (req, res)=>{
+app.post("/pokemon/new", isSignedIn, async (req, res)=>{
     if(req.body.evolution === "on"){
         req.body.evolution = true;
     }else{
@@ -92,13 +92,13 @@ app.get("/pokemon/:id", async (req, res)=>{
 });
 
     //DELETE Pokemon Box Route
-app.delete("/pokemon/:id", async (req, res)=>{
+app.delete("/pokemon/:id", isSignedIn, async (req, res)=>{
     await Pokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
 });
 
     //Edit Show Page
-app.get("/pokemon/:id/edit", async (req, res)=>{
+app.get("/pokemon/:id/edit", isSignedIn, async (req, res)=>{
     const pokemon = await Pokemon.findById(req.params.id);
     res.render("edit.ejs", {
         pokemon
@@ -106,7 +106,7 @@ app.get("/pokemon/:id/edit", async (req, res)=>{
 });
 
     //PUT Route
-app.put("/pokemon/:id", async (req, res)=>{
+app.put("/pokemon/:id", isSignedIn, async (req, res)=>{
     if(req.body.evolution === "on"){
         req.body.evolution = true;
     }else{

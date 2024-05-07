@@ -16,7 +16,7 @@ router.get("/pokemon/new/api", isSignedIn, (req, res)=>{
 });
 
     //Add From API
-router.post("/pokemon/api", async (req, res)=>{
+router.post("/pokemon/api", isSignedIn, async (req, res)=>{
     const pokedexId = req.body.pokemonId;
     const url = `https://pokeapi.co/api/v2/pokemon/${pokedexId}`;
     let pokeName;
@@ -62,7 +62,7 @@ router.get("/pokemon/api/:id", async (req, res)=>{
 });
 
     //DELETE Api Pokemon Route
-router.delete("/pokemon/api/:id", async (req, res)=>{
+router.delete("/pokemon/api/:id", isSignedIn, async (req, res)=>{
     await ApiPokemon.findByIdAndDelete(req.params.id);
     res.redirect("/pokemon");
 });
