@@ -8,7 +8,14 @@
 </head>
 <body>
     <nav>
+        <% if(user){ %>
+            <a id="link" href="/">Home Page</a>
+            <a id="link" href="/aut/sign-out">Sing Out</a>
+       <% }else{ %>
         <a id="link" href="/">Home Page</a>
+        <a id="link" href="/auth/sign-up">Sign Up</a>
+        <a id="link" href="/auth/sign-in">Sign In</a>
+      <% } %>
     </nav>
 
     <div class="grid-container">
