@@ -45,7 +45,6 @@ router.post("/pokemon/api", isSignedIn, async (req, res)=>{
                 apiimage: pokeImage
             });
             res.redirect("/pokemon"); //I initially had res.redirect() outside of the async function, but I had to refresh the browser to see the udpated database - Learned that it had to go inside the async function where the document is created and stored in the database, so that the redirection occurs AFTER the document is created and stored (Outside, it redirected before the document was actually created and stored - hence the need to refresh browser)
-            console.log(pokemon);
         } catch(error) {
             console.log(error);
         }

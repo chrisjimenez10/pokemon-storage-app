@@ -17,7 +17,6 @@ const passwordElement = document.querySelector("#password");
 const confirmPasswordElement = document.querySelector("#confirmPassword");
 
 function validateInput(event) {
-    // console.log(event);
     const key = event.key; //Stores the key value being pressed
     // The pattern we need to use in the regex if we want to accept ONLY the characters we defined in the character class [ ] - then we need to use the "+" quantifier and not the "*" because this way it matches one ore more occurrences (when it was zero or more, it would accept matches OUTSIDE of the defined pattern)
     const alphanumericRegex = /^[0-9a-zA-Z]+$/; //Define the regex pattern (only numbers 0-9, a-z, A-Z --> exlcuding special characters)
