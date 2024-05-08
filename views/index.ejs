@@ -30,6 +30,14 @@
         </div>
 
         <div id="grid-cell-two">
+            <div class="sort-btns">
+                <form action="/pokemon" method="GET">
+                    <button id="sort-btn" type="submit" name="sortBy" value="alphaorder">Alphabetical</button>
+                </form>
+                <form action="/pokemon" method="GET">
+                    <button id="sort-btn" type="submit" name="sortBy" value="number">Default</button>
+                </form>
+            </div>
             <h1>Pokedex</h1>
             <ul>
                 <% pokemonArray.forEach(pokemon => { %>
